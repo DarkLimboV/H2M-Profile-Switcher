@@ -70,12 +70,12 @@ namespace H2M_Profile_Switcher
         // Method to prompt the user to select the H2M path
         private void h2mpathselect()
         {
-            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            /*using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Check if the selected path contains the expected file
-                    if (File.Exists(folderDialog.SelectedPath + "\\imagefile1.pak"))
+                    if (File.Exists(folderDialog.SelectedPath + "\\tier0_s.dll"))
                     {
                         Properties.Settings.Default.H2MPath = folderDialog.SelectedPath;
                         Properties.Settings.Default.Save();
@@ -98,7 +98,51 @@ namespace H2M_Profile_Switcher
                         }
                     }
                 }
+            }*/
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            // Set dialog properties
+            openFileDialog.Title = "Select a File";
+            openFileDialog.Filter = "Applications (*.exe)|*.exe"; // You can change the filter as needed
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            // Show the dialog and check if the user selected a file
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Get the selected file path
+                string filePath = openFileDialog.FileName;
+
+                // Get the directory of the selected file
+                string directoryPath = Path.GetDirectoryName(filePath);
+
+                // Check if the selected path contains the expected file
+                if (File.Exists(directoryPath + "\\tier0_s.dll"))
+                {
+                    Properties.Settings.Default.H2MPath = directoryPath;
+                    Properties.Settings.Default.H2MEXE = filePath;
+                    Properties.Settings.Default.Save();
+                    return;
+                }
+                else
+                {
+                    // If the path is invalid, prompt the user to try again or close the app
+                    DialogResult msgbox = MessageBox.Show(this, directoryPath + " is not a valid path, please try again.\n\nMake sure you choose the same folder where your H2M.exe is located!", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    if (msgbox == DialogResult.OK)
+                    {
+                        h2mpathselect();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, "You have not set your H2M path. The program will now close", "First run", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                        return;
+                    }
+                }
             }
+
         }
 
         // Method to copy a directory recursively
@@ -276,6 +320,17 @@ namespace H2M_Profile_Switcher
             }
             Properties.Settings.Default.DarkMode = DarkModeCheckBox.Checked;
             Properties.Settings.Default.Save();
+        }
+
+        private void Launch_Game_Click(object sender, EventArgs e)
+        {
+            //Have to do this or it wont launch :(
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = Properties.Settings.Default.H2MEXE,
+                WorkingDirectory = Properties.Settings.Default.H2MPath
+            };
+            Process.Start(startInfo);
         }
     }
 }

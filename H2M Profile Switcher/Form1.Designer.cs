@@ -44,6 +44,7 @@
             this.Delete_Profile = new System.Windows.Forms.Button();
             this.Open_Readme = new System.Windows.Forms.Button();
             this.DarkModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.Launch_Game = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(12, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(404, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(404, 158);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -166,7 +167,7 @@
             // 
             this.Update_Profile_from_H2M.BackColor = System.Drawing.Color.Transparent;
             this.Update_Profile_from_H2M.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Update_Profile_from_H2M.Location = new System.Drawing.Point(230, 123);
+            this.Update_Profile_from_H2M.Location = new System.Drawing.Point(230, 124);
             this.Update_Profile_from_H2M.Name = "Update_Profile_from_H2M";
             this.Update_Profile_from_H2M.Size = new System.Drawing.Size(180, 23);
             this.Update_Profile_from_H2M.TabIndex = 12;
@@ -223,6 +224,18 @@
             this.DarkModeCheckBox.UseVisualStyleBackColor = false;
             this.DarkModeCheckBox.CheckedChanged += new System.EventHandler(this.DarkModeCheckBox_CheckedChanged);
             // 
+            // Launch_Game
+            // 
+            this.Launch_Game.BackColor = System.Drawing.Color.Transparent;
+            this.Launch_Game.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Launch_Game.Location = new System.Drawing.Point(20, 153);
+            this.Launch_Game.Name = "Launch_Game";
+            this.Launch_Game.Size = new System.Drawing.Size(390, 23);
+            this.Launch_Game.TabIndex = 17;
+            this.Launch_Game.Text = "Launch Game";
+            this.Launch_Game.UseVisualStyleBackColor = false;
+            this.Launch_Game.Click += new System.EventHandler(this.Launch_Game_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,7 +243,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(428, 165);
+            this.ClientSize = new System.Drawing.Size(428, 196);
+            this.Controls.Add(this.Launch_Game);
             this.Controls.Add(this.DarkModeCheckBox);
             this.Controls.Add(this.Open_Readme);
             this.Controls.Add(this.Delete_Profile);
@@ -275,6 +289,7 @@
         private System.Windows.Forms.Button Delete_Profile;
         private System.Windows.Forms.Button Open_Readme;
         private System.Windows.Forms.CheckBox DarkModeCheckBox;
+        private System.Windows.Forms.Button Launch_Game;
     }
 }
 

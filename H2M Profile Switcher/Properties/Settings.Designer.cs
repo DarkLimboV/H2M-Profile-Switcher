@@ -46,5 +46,17 @@ namespace H2M_Profile_Switcher.Properties {
                 this["DarkMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string H2MEXE {
+            get {
+                return ((string)(this["H2MEXE"]));
+            }
+            set {
+                this["H2MEXE"] = value;
+            }
+        }
     }
 }
