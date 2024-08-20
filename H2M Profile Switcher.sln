@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H2M Profile Switcher", "H2M Profile Switcher\H2M Profile Switcher.csproj", "{B82F23E0-9D5C-46EB-8CC7-487DAC2E53EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B82F23E0-9D5C-46EB-8CC7-487DAC2E53EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B82F23E0-9D5C-46EB-8CC7-487DAC2E53EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B82F23E0-9D5C-46EB-8CC7-487DAC2E53EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B82F23E0-9D5C-46EB-8CC7-487DAC2E53EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {537E4B25-90BC-4684-A412-C4F6B5106CF7}
+	EndGlobalSection
+EndGlobal
