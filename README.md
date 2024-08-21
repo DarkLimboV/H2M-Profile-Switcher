@@ -23,9 +23,11 @@ For example, you might have one profile for grinding and another for casual play
       - "Launch Game" Launches H2M directly from the app for easy use.
 
 2. **Setting Up Profiles**:
-   - Place the H2M Profile Switcher executable (`H2M Profile Switcher.exe`) in its own directory anywhere. Make sure no other folders are present with where the exe is stored.
-   - Create a new profile by adding a folder in the same directory as the program executable. Each folder represents a different "user" profile.
-   - Note: These user folders can be named anything as long as they have to proper files in them.
+   - Place the H2M Profile Switcher executable (`H2M Profile Switcher.exe`) anywhere. It does *NOT* have to be in the same folder as H2M
+   - To add a already existing profile, copy the "user" from your H2M folder in the "H2M Profiles" folder.
+   - Feel free to rename the copied folder to anything you like!
+   - Each folder represents a different "user" profile.
+   - Note: If you are unable to find the "H2M Profiles" folder, Create one. The program should have already created on first run.
 
 3. **Switching Profiles**:
    - Launch the `H2M Profile Switcher.exe`.
