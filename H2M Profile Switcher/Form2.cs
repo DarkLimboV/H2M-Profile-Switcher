@@ -49,8 +49,15 @@ namespace H2M_Profile_Switcher
         private void Create_Click(object sender, EventArgs e)
         {
             // Create a new directory with the name specified in textBox1
-            Directory.CreateDirectory(textBox1.Text);
-            this.Close();  // Close the form after creating the directory
+
+            try { 
+                Directory.CreateDirectory("\\H2M Profiles" + textBox1.Text);
+                this.Close();  // Close the form after creating the directory
+            }
+            catch (System.ArgumentException)
+            {
+                MessageBox.Show("A folder name can't contain any of the following characters:\n\\ / : * ? \" < > |", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         // Event handler for the Cancel button click event
